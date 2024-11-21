@@ -103,8 +103,16 @@ namespace Google.Impl
         {
           var context = task.Result;
           var queryString = context.Request.Url.Query;
-          var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
-          if(queryDictionary == null || queryDictionary.Get("code") is not string code || string.IsNullOrEmpty(code))
+          var queryDictionary = queryString.TrimStart('?')
+                                          .Split('&', StringSplitOptions.RemoveEmptyEntries)
+                                          .Select(part => part.Split('='))
+                                          .Where(parts => parts.Length == 2)
+                                          .ToDictionary(parts => Uri.UnescapeDataString(parts[0]),
+                                                        parts => Uri.UnescapeDataString(parts[1]));
+
+          if (queryDictionary == null || 
+            !queryDictionary.TryGetValue("code", out string code) || 
+            string.IsNullOrEmpty(code))
           {
             Status = GoogleSignInStatusCode.INVALID_ACCOUNT;
 
