@@ -12,7 +12,6 @@
 
   <!-- iOS Cocoapod dependencies can be specified by each iosPod element. -->
   <iosPods>
-    <iosPod name="GoogleSignIn" version="8.0.0"> </iosPod>
-    <iosPod name="GoogleAppMeasurement"> </iosPod>
+    <iosPod name="GoogleSignIn" version="7.0.0"> </iosPod>
   </iosPods>
 </dependencies>
