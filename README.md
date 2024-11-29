@@ -2,7 +2,14 @@
 _Copyright (c) 2017 Google Inc. All rights reserved._
 
 
-### Work with Firebase 12.4 (on android and ios platform)
+<br />
+
+***********
+
+### Work withFirebase 12.4 (on android and ios platform)
+
+***********
+<br />
 
 
 ## Overview
