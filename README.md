@@ -2,6 +2,9 @@
 _Copyright (c) 2017 Google Inc. All rights reserved._
 
 
+### Work with Firebase 12.4 (on android and ios platform)
+
+
 ## Overview
 
 Google Sign-In API plugin for Unity game engine.  Works with Android and iOS.
